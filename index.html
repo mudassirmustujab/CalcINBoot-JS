@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<body class=" h-100" style="background-color: #7D7C7C;">
+<div class="container " style="background-color:#B4B4B3;">
+    <div class="row justify-content-center align-items-center">
+        <div class="col-lg-9 justify-content-center">
+            <div class="d-flex flex-column py-5">
+
+                <h1 class="text-center pb-4">Percecntage Calculator</h1>
+                
+                <input type="number" id="input1" placeholder="Enter obtained marks">
+                <input type="number" id="input2" placeholder="Enter total marks" class="my-2">
+                <button onclick="ui()">Go</button>
+                
+                <h2 class="text-center mt-5">Percentage</h2>
+                <h3 class="text-center"> Result</h3>
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+        function ui() {
+            let val1 = Number(document.querySelector(`#input1`).value)
+            let val2 = Number(document.querySelector(`#input2`).value)
+            let result = val1/val2*100
+            document.querySelector(`h2`).innerHTML= result +"%" 
+
+            if (result>=0 && result<=40) {
+                document.querySelector(`h3`).innerHTML="Failed"
+            }
+            else if (result>=40 && result<=60) {
+                document.querySelector(`h3`).innerHTML="Grade C"
+            }
+            else if (result>=60 && result<80) {
+                document.querySelector(`h3`).innerHTML="Grade B"
+            }
+            else if (result>=80 && result<95) {
+                document.querySelector(`h3`).innerHTML="Grade A"
+            }
+            else{
+
+            }
+        }
+      
+    </script>
+</body>
+</html>
